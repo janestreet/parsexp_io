@@ -1,4 +1,4 @@
-open Core.Std
+open Core
 
 let try_withx f x = Result.try_with (fun () -> f x)
 
