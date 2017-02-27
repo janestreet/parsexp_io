@@ -1,3 +1,4 @@
+INSTALL_ARGS := $(if $(PREFIX),--prefix $(PREFIX),)
 NAME := parsexp_io
 
 # Default rule
@@ -5,10 +6,10 @@ default:
 	jbuilder build-package $(NAME)
 
 install:
-	opam-installer -i --prefix $(PREFIX) $(NAME).install
+	jbuilder install $(INSTALL_ARGS)
 
 uninstall:
-	opam-installer -u --prefix $(PREFIX) $(NAME).install
+	jbuilder uninstall $(INSTALL_ARGS)
 
 reinstall: uninstall reinstall
 

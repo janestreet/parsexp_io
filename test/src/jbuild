@@ -3,3 +3,5 @@
   (libraries (core expect_test_helpers_kernel parsexp_io))
   (inline_tests ((deps (jbuild invalid-sexp))))
   ))
+
+(jbuild_version jane_street)

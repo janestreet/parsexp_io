@@ -1,3 +1,5 @@
 (executables
  ((names (compare_sexplib_and_parsexp))
   (libraries (core sexplib parsexp_io))))
+
+(jbuild_version jane_street)
