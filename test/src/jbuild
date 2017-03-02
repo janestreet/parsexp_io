@@ -1,7 +1,7 @@
 (library
  ((name parsexp_io_test)
   (libraries (core expect_test_helpers_kernel parsexp_io))
-  (inline_tests ((deps (jbuild invalid-sexp))))
+  (preprocess (pps (ppx_jane)))
   ))
 
 (jbuild_version jane_street)
