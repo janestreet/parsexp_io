@@ -10,11 +10,12 @@ build: [
 ]
 depends: [
   "base"
-  "jbuilder"
+  "jbuilder"                {build}
   "parsexp"
   "ppx_driver"
   "ppx_js_style"
   "stdio"
+  "ocaml-migrate-parsetree"
 ]
 available: [ ocaml-version >= "4.03.0" ]
 descr: "

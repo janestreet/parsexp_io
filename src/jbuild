@@ -6,7 +6,7 @@
   ;; dependencies, you can add ppx rewriters but only when you need
   ;; them
   (preprocess (pps (-no-optcomp
-                    ppx_js_style -check-doc-comments)))
+                    ppx_js_style -check-doc-comments ppx_driver.runner)))
 ))
 
 
