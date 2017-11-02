@@ -1,6 +1,7 @@
 (library
  ((name parsexp_io)
   (public_name parsexp_io)
+  (flags (:standard -unsafe-string))
   (libraries (base stdio parsexp))
   ;; parsexp_io is one the base library for which we are careful about
   ;; dependencies, you can add ppx rewriters but only when you need
