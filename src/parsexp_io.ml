@@ -2,8 +2,6 @@ open Base
 open Stdio
 open Parsexp
 
-module Bytes = Caml.Bytes
-
 let load_exn (type a) (module P : Parser with type parsed_value = a) ~filename =
   In_channel.with_file filename ~f:(fun ic ->
     let buf = Bytes.create 8192 in
@@ -11,7 +9,7 @@ let load_exn (type a) (module P : Parser with type parsed_value = a) ~filename =
     let rec loop stack =
       match In_channel.input ic ~buf ~pos:0 ~len:(Bytes.length buf) with
       | 0 -> P.feed_eoi state stack
-      | n -> loop (P.feed_substring state buf stack ~pos:0 ~len:n)
+      | n -> loop (P.feed_subbytes state buf stack ~pos:0 ~len:n)
     in
     loop P.Stack.empty)
 

@@ -1,5 +1,6 @@
 (executables
  ((names (compare_sexplib_and_parsexp))
+  (flags (:standard -safe-string))
   (libraries (core sexplib parsexp_io))
   (preprocess (pps (ppx_jane ppx_driver.runner)))))
 

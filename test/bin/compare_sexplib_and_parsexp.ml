@@ -106,7 +106,7 @@ let rec walk dir ~f =
 
 let () =
   Command.run
-    (Command.basic' ~summary:"compare Parsexp and Sexplib on the whole tree"
+    (Command.basic ~summary:"compare Parsexp and Sexplib on the whole tree"
        (let open Command.Let_syntax in
         let%map_open
           ascii = flag "-ascii" no_arg ~doc:" disable colors"
