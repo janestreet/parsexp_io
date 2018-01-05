@@ -16,11 +16,11 @@ type ('a, 'b) conv_mode =
 val load_conv
   :  ('a, 'b) conv_mode
   -> filename:string
-  -> (Sexplib.Sexp.t -> 'a)
+  -> (Base.Sexp.t -> 'a)
   -> ('b, Conv_error.t) result
 
 val load_conv_exn
   :  ('a, 'b) conv_mode
   -> filename:string
-  -> (Sexplib.Sexp.t -> 'a)
+  -> (Base.Sexp.t -> 'a)
   -> 'b
