@@ -6,7 +6,7 @@
   ;; parsexp_io is one the base library for which we are careful about
   ;; dependencies, you can add ppx rewriters but only when you need
   ;; them
-  (preprocess (pps (-no-optcomp
+  (preprocess (pps (
                     ppx_js_style -check-doc-comments ppx_driver.runner)))
 ))
 
