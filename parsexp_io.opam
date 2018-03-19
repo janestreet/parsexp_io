@@ -1,4 +1,5 @@
 opam-version: "1.2"
+version: "v0.11.0"
 maintainer: "opensource@janestreet.com"
 authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
 homepage: "https://github.com/janestreet/parsexp_io"
@@ -9,10 +10,10 @@ build: [
   ["jbuilder" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "base"
-  "parsexp"
-  "ppx_js_style"
-  "stdio"
+  "base"                    {>= "v0.11" & < "v0.12"}
+  "parsexp"                 {>= "v0.11" & < "v0.12"}
+  "ppx_js_style"            {>= "v0.11" & < "v0.12"}
+  "stdio"                   {>= "v0.11" & < "v0.12"}
   "jbuilder"                {build & >= "1.0+beta18.1"}
   "ocaml-migrate-parsetree" {>= "1.0"}
   "ppxlib"                  {>= "0.1.0"}
