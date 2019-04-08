@@ -1,4 +1,5 @@
 open Core
+open Poly
 
 let try_withx f x = Result.try_with (fun () -> f x)
 
