@@ -25,8 +25,8 @@ type ('a, 'b) conv_mode =
 let load_conv_exn
   :  type a b. (a, b) conv_mode
     -> filename:string
-  -> (Sexp.t -> a)
-  -> b
+    -> (Sexp.t -> a)
+    -> b
   = fun mode ~filename f ->
     match mode with
     | Single -> Conv_single.conv_exn (load_exn (module Single_and_positions) ~filename) f
@@ -35,8 +35,8 @@ let load_conv_exn
 let load_conv
   :  type a b. (a, b) conv_mode
     -> filename:string
-  -> (Sexp.t -> a)
-  -> (b, Conv_error.t) Result.t
+    -> (Sexp.t -> a)
+    -> (b, Conv_error.t) Result.t
   = fun mode ~filename f ->
     match mode with
     | Single -> Conv_single.conv_combine (load (module Single_and_positions) ~filename) f
