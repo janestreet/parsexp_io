@@ -15,7 +15,7 @@ depends: [
   "parsexp"
   "ppx_js_style"
   "stdio"
-  "dune"         {>= "1.5.1"}
+  "dune"         {>= "2.0.0"}
 ]
 synopsis: "S-expression parsing library (IO functions)"
 description: "
