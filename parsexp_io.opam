@@ -1,4 +1,5 @@
 opam-version: "2.0"
+version: "v0.14.0"
 maintainer: "opensource@janestreet.com"
 authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
 homepage: "https://github.com/janestreet/parsexp_io"
@@ -10,11 +11,11 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "ocaml" {>= "4.04.2"}
-  "base"
-  "parsexp"
-  "ppx_js_style"
-  "stdio"
+  "ocaml"        {>= "4.04.2"}
+  "base"         {>= "v0.14" & < "v0.15"}
+  "parsexp"      {>= "v0.14" & < "v0.15"}
+  "ppx_js_style" {>= "v0.14" & < "v0.15"}
+  "stdio"        {>= "v0.14" & < "v0.15"}
   "dune"         {>= "2.0.0"}
 ]
 synopsis: "S-expression parsing library (IO functions)"
