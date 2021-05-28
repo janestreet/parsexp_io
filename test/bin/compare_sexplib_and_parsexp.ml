@@ -106,7 +106,7 @@ let rec walk dir ~f =
       f full_fn)
 
 let () =
-  Command.run
+  Command_unix.run
     (Command.basic ~summary:"compare Parsexp and Sexplib on the whole tree"
        (let open Command.Let_syntax in
         let%map_open
