@@ -61,7 +61,7 @@ let test_one_kind ~ascii ~what ~sexplib_load ~parsexp_load fn ~sexp_of:sexp_of_a
     Sexplib.Sexp.save_hum "parsexp.sexp.tmp" ([%sexp_of: (a list, exn) Result.t] s2);
     let (_exit_code : int) =
       ksprintf
-        Sys.command "patdiff %s sexplib.sexp.tmp parsexp.sexp.tmp"
+        Sys_unix.command "patdiff %s sexplib.sexp.tmp parsexp.sexp.tmp"
         (if ascii then "-ascii" else "")
     in
     exit 1
@@ -98,9 +98,9 @@ let test fn ~ascii =
     fn
 
 let rec walk dir ~f =
-  Array.iter (Sys.readdir dir) ~f:(fun fn ->
+  Array.iter (Sys_unix.readdir dir) ~f:(fun fn ->
     let full_fn = dir ^/ fn in
-    if Sys.is_directory full_fn = `Yes then
+    if Sys_unix.is_directory full_fn = `Yes then
       walk full_fn ~f
     else if fn = "jbuild" || String.is_suffix fn ~suffix:".sexp" then
       f full_fn)

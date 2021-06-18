@@ -1,4 +1,4 @@
-open Core_kernel
+open Core
 
 let test filename =
   match Parsexp_io.load (module Parsexp.Many) ~filename with
