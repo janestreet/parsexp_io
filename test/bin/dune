@@ -1,4 +1,4 @@
 (executables (names compare_sexplib_and_parsexp)
- (libraries core_kernel.core sexplib core.command_unix parsexp_io
-  core.sys_unix)
+ (libraries core sexplib core_unix.command_unix parsexp_io
+  core_unix.sys_unix)
  (preprocess (pps ppx_jane)))
