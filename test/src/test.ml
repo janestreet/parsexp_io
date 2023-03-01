@@ -4,7 +4,7 @@ let test filename =
   match Parsexp_io.load (module Parsexp.Many) ~filename with
   | Ok _ -> ()
   | Error error ->
-    Parsexp.Parse_error.report Caml.Format.std_formatter error ~filename
+    Parsexp.Parse_error.report Stdlib.Format.std_formatter error ~filename
 ;;
 
 let%expect_test _ =

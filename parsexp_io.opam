@@ -17,6 +17,7 @@ depends: [
   "stdio"
   "dune"         {>= "2.0.0"}
 ]
+available: arch != "arm32" & arch != "x86_32"
 synopsis: "S-expression parsing library (IO functions)"
 description: "
 Parsexp_io provides functions for loading s-expressions from files.
