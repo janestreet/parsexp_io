@@ -8,12 +8,12 @@ let test filename =
 
 let%expect_test _ =
   test "jbuild";
-  [%expect];
+  [%expect {| |}];
   test "invalid-sexp";
   [%expect
     {|
     File "invalid-sexp", line 3, character 6:
     Error: s-expression parsing error;
     unterminated decimal escape sequence
-  |}]
+    |}]
 ;;
