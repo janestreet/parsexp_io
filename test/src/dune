@@ -1,5 +1,5 @@
 (library
  (name parsexp_io_test)
- (libraries core parsexp_io)
+ (libraries core parsexp parsexp_io)
  (preprocess
   (pps ppx_jane)))
