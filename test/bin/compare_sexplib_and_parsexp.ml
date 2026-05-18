@@ -19,9 +19,9 @@ module Cst_to_sexp_with_layout = struct
         match unescaped with
         | None -> atom
         | Some unescaped ->
-          (* We already test that the main sexplib parser and parsexp parse atoms the
-             same way. The sexplib lexer parses atom differently and that's what is used
-             for parsing sexps with layout.
+          (* We already test that the main sexplib parser and parsexp parse atoms the same
+             way. The sexplib lexer parses atom differently and that's what is used for
+             parsing sexps with layout.
 
              We assume that the Parsexp CST parser parses atoms the same way that the
              normal parsexp parser, and just use the sexplib lexer here. *)
@@ -35,7 +35,7 @@ module Cst_to_sexp_with_layout = struct
         ( convert_pos loc.start_pos
         , List.map elements ~f:convert_t_or_comment
         , (* Sexplib stores the position of the ')' while parsexp ranges are intervals
-               with inclusive lower-bound and exclusive upper-bound. *)
+             with inclusive lower-bound and exclusive upper-bound. *)
           convert_pos loc.end_pos ~delta:(-1) )
 
   and convert_t_or_comment : Src.t_or_comment -> Dst.t_or_comment = function
